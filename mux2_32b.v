@@ -6,6 +6,7 @@
 // Additional Comments: 
 // IF stage, mux 32bit out 
 // ID stage sel (immediate||Reg2)
+// Wb stage takoder, jedini mux
 //////////////////////////////////////////////////////////////////////////////////
 module Mux2_32b( input [31:0] in1,in2,input sel,output reg [31:0] out); 
 	 
