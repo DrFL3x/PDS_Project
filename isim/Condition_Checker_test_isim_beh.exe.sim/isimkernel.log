@@ -1,0 +1,29 @@
+Command line:
+   Condition_Checker_test_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  41137
+
+Sun May 29 15:40:12 2022
+
+
+ Elaboration Time: 0.11 sec
+
+ Current Memory Usage: 215.237 Meg
+
+ Total Signals          : 17
+ Total Nets             : 80
+ Total Signal Drivers   : 9
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 12
+ Total Traceable Variables  : 22
+ Total Scalar Nets and Variables : 227
+Total Line Count : 32
+
+ Total Simulation Time: 0.2 sec
+
+ Current Memory Usage: 292.835 Meg
+
+Sun May 29 15:41:52 2022
+

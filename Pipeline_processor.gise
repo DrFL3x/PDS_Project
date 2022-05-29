@@ -21,8 +21,136 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Pipeline_processor.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ALU_test_isim_beh.exe"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Baud_Generator_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Condition_Checker_test_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Condition_Checker_test_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="Condition_Checker_test_isim_beh.wdb"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Data_Memory_test_isim_beh.exe"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Instruction_Memory_test_isim_beh.exe"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="UART_Receiver_isim_beh.exe"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="UART_Receiver_test_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="test1_test_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="test1_test_stx_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
+  </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1653334834" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1653334834">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1653838797" xil_pn:in_ck="4720416187071855815" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1653838797">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="ALU.v"/>
+      <outfile xil_pn:name="ALU_test.v"/>
+      <outfile xil_pn:name="Baud_Generator.v"/>
+      <outfile xil_pn:name="Condition_Checker.v"/>
+      <outfile xil_pn:name="Condition_Checker_test.v"/>
+      <outfile xil_pn:name="Control_Unit.v"/>
+      <outfile xil_pn:name="Data_Memory.v"/>
+      <outfile xil_pn:name="Data_Memory_test.v"/>
+      <outfile xil_pn:name="Forwarding_Unit.v"/>
+      <outfile xil_pn:name="Hazard_Detection_Unit.v"/>
+      <outfile xil_pn:name="Instruction_Memory.v"/>
+      <outfile xil_pn:name="Instruction_Memory_test.v"/>
+      <outfile xil_pn:name="PC.v"/>
+      <outfile xil_pn:name="PC_Adder.v"/>
+      <outfile xil_pn:name="Sign_Extend.v"/>
+      <outfile xil_pn:name="UART_Byte_Receiver.v"/>
+      <outfile xil_pn:name="UART_Receiver.v"/>
+      <outfile xil_pn:name="UART_Receiver_test.v"/>
+      <outfile xil_pn:name="UART_Transmitter.v"/>
+      <outfile xil_pn:name="mux1.v"/>
+      <outfile xil_pn:name="mux2.v"/>
+      <outfile xil_pn:name="mux3.v"/>
+      <outfile xil_pn:name="mux4.v"/>
+      <outfile xil_pn:name="test1.v"/>
+      <outfile xil_pn:name="test1_test.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1653838797" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-8281036895999143471" xil_pn:start_ts="1653838797">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1653838797" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="3431500927744799827" xil_pn:start_ts="1653838797">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1653334834" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-3483683084375039482" xil_pn:start_ts="1653334834">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1653838797" xil_pn:in_ck="4720416187071855815" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1653838797">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="ALU.v"/>
+      <outfile xil_pn:name="ALU_test.v"/>
+      <outfile xil_pn:name="Baud_Generator.v"/>
+      <outfile xil_pn:name="Condition_Checker.v"/>
+      <outfile xil_pn:name="Condition_Checker_test.v"/>
+      <outfile xil_pn:name="Control_Unit.v"/>
+      <outfile xil_pn:name="Data_Memory.v"/>
+      <outfile xil_pn:name="Data_Memory_test.v"/>
+      <outfile xil_pn:name="Forwarding_Unit.v"/>
+      <outfile xil_pn:name="Hazard_Detection_Unit.v"/>
+      <outfile xil_pn:name="Instruction_Memory.v"/>
+      <outfile xil_pn:name="Instruction_Memory_test.v"/>
+      <outfile xil_pn:name="PC.v"/>
+      <outfile xil_pn:name="PC_Adder.v"/>
+      <outfile xil_pn:name="Sign_Extend.v"/>
+      <outfile xil_pn:name="UART_Byte_Receiver.v"/>
+      <outfile xil_pn:name="UART_Receiver.v"/>
+      <outfile xil_pn:name="UART_Receiver_test.v"/>
+      <outfile xil_pn:name="UART_Transmitter.v"/>
+      <outfile xil_pn:name="mux1.v"/>
+      <outfile xil_pn:name="mux2.v"/>
+      <outfile xil_pn:name="mux3.v"/>
+      <outfile xil_pn:name="mux4.v"/>
+      <outfile xil_pn:name="test1.v"/>
+      <outfile xil_pn:name="test1_test.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1653838802" xil_pn:in_ck="4720416187071855815" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7614356407943257731" xil_pn:start_ts="1653838797">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Condition_Checker_test_beh.prj"/>
+      <outfile xil_pn:name="Condition_Checker_test_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1653838803" xil_pn:in_ck="-7966942479545682482" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-2195514196671783162" xil_pn:start_ts="1653838802">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="Condition_Checker_test_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+    </transform>
+  </transforms>
 
 </generated_project>

@@ -1,0 +1,4 @@
+verilog isim_temp "Baud_Generator.v"
+verilog isim_temp "test1.v"
+verilog isim_temp "test1_test.v"
+verilog isim_temp "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
