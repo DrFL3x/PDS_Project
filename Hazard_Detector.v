@@ -18,7 +18,7 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module Hazard_Detector(Source_Register_1,Source_Register_2,
+odule Hazard_Detector(Source_Register_1,Source_Register_2,
 							  Destination_Register_EXE_Stage,Destination_Register_MEM_Stage,
 							  Type_Of_Branch,Enabled_Data_Forwarding,Is_Immediate,Store_or_BNE,
 							  Enable_Registers_Write_EXE_Stage,Enable_Memory_Write_MEM_Stage,Enable_Memory_Read_Exe_Stage,Hazard_Detected

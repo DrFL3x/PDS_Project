@@ -1,9 +1,9 @@
-module SIgn_exstension_b16_test;
+module Sign_exstension_b16_test;
 
 	reg [15:0] in;
 	wire [31:0] out;
 
-	SIgn_extension_b16 uut (
+	Sign_extension_b16 uut (
 		.in(in),
 		.out(out)
 	);

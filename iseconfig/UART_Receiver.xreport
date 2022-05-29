@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2022-05-29T16:28:34</DateModified>
+  <DateModified>2022-05-29T16:42:51</DateModified>
   <ModuleName>UART_Receiver</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/ise/Virtual_Machine_Shared_Folder/PDS_project_pipeline_processor/Pipeline_processor/iseconfig/UART_Receiver.xreport</SavedFilePath>

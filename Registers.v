@@ -1,5 +1,4 @@
 `timescale 1ns / 1ps
-`include "Constants.v"
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -24,16 +23,16 @@ module Registers(clk,rst,Enable_Register_Write,Source_Read_1,
 					  Write_Value,Read_Value_1,Read_Value_2
 					  );
  input clk, rst, Enable_Register_Write;
-  input [`REG_FILE_ADDR_LEN-1:0] Source_Read_1, Source_Read_2, Destination_Write;
-  input [`WORD_LEN-1:0] Write_Value;
-  output [`WORD_LEN-1:0] Read_Value_1, Read_Value_2;
+  input [4:0] Source_Read_1, Source_Read_2, Destination_Write;
+  input [31:0] Write_Value;
+  output [31:0] Read_Value_1, Read_Value_2;
 
-  reg [`WORD_LEN-1:0] Internal_Registers [0:`REG_FILE_SIZE-1];
+  reg [31:0] Internal_Registers [31:0];
   integer i;
 
   always @ (negedge clk) begin
     if (rst) begin
-      for (i = 0; i < `WORD_LEN; i = i + 1)
+      for (i = 0; i < 32; i = i + 1)
         Internal_Registers[i] <= 0;
 	    end
 
