@@ -35,7 +35,7 @@ module Data_Memory_test;
 
 	// Outputs
 	wire [31:0] dataOut;
-	wire [31:0] dataUart;
+	wire dataUart;
 
 	// Instantiate the Unit Under Test (UUT)
 	Data_Memory uut (

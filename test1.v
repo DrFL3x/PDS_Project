@@ -31,8 +31,8 @@ module test1(clk, TxD_start, dataIn, dataOver, dataOut
 		dataOver=0;
 		dataOut=0;
 		Byte_Counter=0;
-		memory=dataIn;
 		state=0;
+		memory=dataIn;
 	end
 	
 	Baud_Generator baud2 (.clk(clk),.BaudTick(BaudTick));
@@ -61,8 +61,9 @@ module test1(clk, TxD_start, dataIn, dataOver, dataOut
 		if(Byte_Counter==4) begin
 			Byte_Counter=0;
 			dataOver=1;
-			memory=dataIn;
 		end
+		if(Byte_Counter==0)
+			memory=dataIn;
 		else
 			dataOver=0;	
 	end

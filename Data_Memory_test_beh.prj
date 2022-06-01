@@ -1,0 +1,5 @@
+verilog work "Baud_Generator.v"
+verilog work "UART_Transmitter.v"
+verilog work "Data_Memory.v"
+verilog work "Data_Memory_test.v"
+verilog work "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

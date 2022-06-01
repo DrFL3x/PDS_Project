@@ -27,7 +27,7 @@ module Data_Memory(clk, rst, writeEn, readEn, address, dataIn, dataOut, dataUart
   // dataOut - data that is supposed to be read from Data Memory
   input [31:0] address, dataIn;
   output [31:0] dataOut;
-  output reg [31:0] dataUart;
+  output dataUart;
   reg [31:0] UART_Trans_Input;
   reg [9:0] counter;
   
