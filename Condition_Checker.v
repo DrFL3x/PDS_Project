@@ -26,7 +26,9 @@ module Condition_Checker(reg1, reg2, cuBranchComm, brCond
   input [1:0] cuBranchComm;
   // BrCond is set to 1 if a branch conditions are met
   output reg brCond;
-
+  initial begin
+	 brCond=0;
+  end
   always @ ( * ) begin
     case (cuBranchComm)
 		 // If a branch instruction is JMP then it's not necessary to exemine branch conditions

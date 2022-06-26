@@ -25,13 +25,13 @@ module UART_Receiver(clk,RxD,RxD_word_data,RxD_word_data_ready
 	output reg RxD_word_data_ready;
 	input clk,RxD;
 	wire RxD_data_error;
-	wire RxD_data_ready = 0;
-	wire[7:0] RxD_data = 0;
+	wire RxD_data_ready;
+	wire[7:0] RxD_data;
 	UART_Byte_Receiver byte_receiver(.clk(clk),.RxD_data_error(RxD_data_error),.RxD(RxD),.RxD_data_ready(RxD_data_ready),.RxD_data(RxD_data));
 	
 	initial begin
-		RxD_word_data=0;
 		state=0;
+		RxD_word_data=0;
 	end
 	/*always @ (posedge RxD_data_ready) begin 
 			case(state)
@@ -43,7 +43,7 @@ module UART_Receiver(clk,RxD,RxD_word_data,RxD_word_data_ready
 		endcase
 	end*/
 	always @ (posedge RxD_data_ready) begin 
-		RxD_word_data={RxD_word_data[23:0],RxD_data};
+		RxD_word_data={RxD_data, RxD_word_data[31:8]};
 		if(state==2'b11) 
 			RxD_word_data_ready=1;
 		else

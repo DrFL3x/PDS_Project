@@ -18,18 +18,19 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module Instruction_Memory(rst, addr, instruction, write, write_Instruction, write_Ready
+module Instruction_Memory(rst, addr, start, instruction, write, write_Instruction, write_Ready
     );
-	input rst, write, write_Ready;
+	input rst, write, write_Ready, start;
 	input [31:0] addr;
-	input [7:0] write_Instruction;
+	input [31:0] write_Instruction;
 	output [31:0] instruction;
-	reg [7:0] instMem [1023:0];
-	wire [7:0] test [1:0];
+	reg [31:0] instMem [1023:0];
+	wire [31:0] test [4:0];
 	reg [9:0] counter;
 	wire [9:0] address = addr[9:0];
 	integer i;
-	assign {test[1],test[0]}={instMem[1],instMem[0]};
+	// Testiranje memorije
+	assign {test[4],test[3],test[2],test[1],test[0]}={instMem[4],instMem[3],instMem[2],instMem[1],instMem[0]};
 	initial begin
 		counter=0;
 	end
@@ -48,5 +49,5 @@ module Instruction_Memory(rst, addr, instruction, write, write_Instruction, writ
 		end
 	end
 	
-	assign instruction = {instMem[address], instMem[address + 1], instMem[address + 2], instMem[address + 3]};
+	assign instruction = (start==1)?instMem[address]:0;
 endmodule

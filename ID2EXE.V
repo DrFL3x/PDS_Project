@@ -27,7 +27,20 @@ module ID2EXE (clk, rst, destIn, reg2In, val1In, val2In, PCIn, EXE_CMD_IN, MEM_R
 
   output reg [31:0] ST_value, val1, val2, PC; //32 bita
 
-
+  initial begin
+	 MEM_R_EN=0;
+	 MEM_W_EN=0;
+	 WB_EN=0;
+	 brTaken_out=0;
+	 EXE_CMD=0;
+	 dest=0;
+	 src1_out=0;
+	 src2_out=0;
+	 ST_value=0;
+	 val1=0;
+	 val2=0;
+	 PC=0;
+  end
 
   always @ (posedge clk) begin
 

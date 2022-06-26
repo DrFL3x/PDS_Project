@@ -27,7 +27,13 @@ module MEM2WB (clk, rst, WB_EN_IN, MEM_R_EN_IN, ALUResIn, memReadValIn, destIn,
 
   output reg [31:0] ALURes, memReadVal;
 
-
+  initial begin
+    WB_EN=0;
+	 MEM_R_EN=0;
+	 dest=0;
+	 ALURes=0;
+	 memReadVal=0;
+  end
 
   always @ (posedge clk) begin
 

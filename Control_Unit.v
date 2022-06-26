@@ -19,10 +19,10 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module Control_Unit(opCode, branchEn, EXE_CMD, Branch_command, Is_Imm, ST_or_BNE,
-						  WB_EN, MEM_R_EN, MEM_W_EN, hazard_detected
+						  WB_EN, MEM_R_EN, MEM_W_EN, hazard_detected, start
     );
   // hazard_detected signals if a hazard is detected
-  input hazard_detected;
+  input hazard_detected, start;
   // opCode is Operation Code of assembler instruction
   input [5:0] opCode;
   // branchEn signals if a instruction is branching and this signal is used to acticate branching
@@ -37,10 +37,12 @@ module Control_Unit(opCode, branchEn, EXE_CMD, Branch_command, Is_Imm, ST_or_BNE
   // MEM_R_EN is a signal that enables read from memory in MEM Stage
   // MEM_W_EN is a signal that enables write to a memory in MEM stage
   output reg Is_Imm, ST_or_BNE, WB_EN, MEM_R_EN, MEM_W_EN;
-  
+  initial begin
+	 branchEn=0;
+  end
   always @ ( * ) begin
 	 // If hazard is not detected then CPU is in normal operating mode
-    if (hazard_detected == 0) begin
+    if ((hazard_detected == 0)/*&&(start == 1)*/) begin
       {branchEn, EXE_CMD, Branch_command, Is_Imm, ST_or_BNE, WB_EN, MEM_R_EN, MEM_W_EN} <= 0;
       case (opCode)
         // operations writing to the register file

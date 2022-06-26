@@ -35,6 +35,8 @@ module UART_Byte_Receiver(RxD,clk,RxD_data_ready,RxD_data,RxD_data_error
 	Baud_Generator baud(.clk(clk),.BaudTick(Baud8Tick));
 	initial begin
 		RxD_cnt=3;
+		state=0;
+      bit_spacing=0;
 	end
 	always@(posedge clk) begin
 		if(Baud8Tick) 
@@ -69,7 +71,8 @@ module UART_Byte_Receiver(RxD,clk,RxD_data_ready,RxD_data,RxD_data_error
 				4'b1101: if(next_bit) state <= 4'b1110; // bit 5
 				4'b1110: if(next_bit) state <= 4'b1111; // bit 6
 				4'b1111: if(next_bit) state <= 4'b0001; // bit 7
-				4'b0001: if(next_bit) state <= 4'b0000; // stop bit
+				4'b0001: if(next_bit) state <= 4'b0010; // stop bit
+				4'b0010: if(next_bit) state <= 4'b0000; // stop2
 				default: state <= 4'b0000;
 			endcase
 		end
@@ -84,11 +87,11 @@ module UART_Byte_Receiver(RxD,clk,RxD_data_ready,RxD_data,RxD_data_error
 		end
 	end
 	assign next_bit = (bit_spacing==7);
-	
-	always @ (posedge clk) if(Baud8Tick && next_bit && state[3]) RxD_data <= {RxD_bit, RxD_data[7:1]};
+	//RxD_bit zamijenjen sa RxD
+	always @ (posedge clk) if(Baud8Tick && next_bit && state[3]) RxD_data <= {RxD, RxD_data[7:1]};
 
 	always @ (posedge clk) begin
-		RxD_data_ready <= (next_bit && state==4'b0001 && RxD_bit);
-		RxD_data_error <= (next_bit && state==4'b0001 && ~RxD_bit);
+		RxD_data_ready <= (next_bit && state==4'b0010 && RxD_bit);
+		RxD_data_error <= (next_bit && state==4'b0010 && ~RxD_bit);
 	end
 endmodule

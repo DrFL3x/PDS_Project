@@ -35,12 +35,16 @@ module Hazard_Detection_Unit(forward_EN, is_imm, ST_or_BNE, src1_ID, src2_ID, de
   // MEM_R_EN_EXE is a signal that enables reading from memory for a instruction in EXE Stage
   input forward_EN, WB_EN_EXE, WB_EN_MEM, is_imm, ST_or_BNE, MEM_R_EN_EXE;
   // hazard_detected is an output signal that indicates if a hazard is detected
-  output hazard_detected;
+  output reg hazard_detected;
   // src2_is_valid indicates that src2_ID is referred to a register address and not immediate
   // exe_has_hazard indicates if a same register is a destination for instruction in EXE Stage and source for instruction in ID Stage
   // mem_has_hazard indicates if a same register is a destination for instruction in MEM Stage and source for instruction in ID Stage
   wire src2_is_valid, exe_has_hazard, mem_has_hazard, hazard, instr_is_branch;
-
+  
+  initial begin
+	hazard_detected=0;
+  end
+  
   assign src2_is_valid =  (~is_imm) || ST_or_BNE;
   assign exe_has_hazard = WB_EN_EXE && (src1_ID == dest_EXE || (src2_is_valid && src2_ID == dest_EXE));
   assign mem_has_hazard = WB_EN_MEM && (src1_ID == dest_MEM || (src2_is_valid && src2_ID == dest_MEM));
@@ -49,6 +53,13 @@ module Hazard_Detection_Unit(forward_EN, is_imm, ST_or_BNE, src1_ID, src2_ID, de
   // instr_is_branch indicates if branch is BEZ or BNE
   assign instr_is_branch = (branch_comm == 3) || (branch_comm == 1);
 
-  assign hazard_detected = ~forward_EN ? hazard : (instr_is_branch && hazard) || (MEM_R_EN_EXE && mem_has_hazard);
+  always@(*) begin
+	if(~forward_EN) begin
+		hazard_detected = hazard;
+	end
+	else begin
+		hazard_detected = (instr_is_branch && hazard) || (MEM_R_EN_EXE && mem_has_hazard);
+	end
+  end
 
 endmodule

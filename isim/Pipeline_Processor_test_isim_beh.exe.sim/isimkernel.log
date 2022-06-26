@@ -1,0 +1,33 @@
+Command line:
+   Pipeline_Processor_test_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  52224
+
+Sun Jun 26 14:07:23 2022
+
+
+ Elaboration Time: 0.2 sec
+
+ Current Memory Usage: 217.891 Meg
+
+ Total Signals          : 296
+ Total Nets             : 1353
+ Total Signal Drivers   : 104
+ Total Blocks           : 35
+ Total Primitive Blocks : 25
+ Total Processes        : 152
+ Total Traceable Variables  : 109
+ Total Scalar Nets and Variables : 69190
+Total Line Count : 584
+Total Line Count : 584
+Total Line Count : 584
+Total Line Count : 584
+Total Line Count : 584
+
+ Total Simulation Time: 4.76 sec
+
+ Current Memory Usage: 295.625 Meg
+
+Sun Jun 26 14:16:01 2022
+

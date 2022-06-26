@@ -26,10 +26,19 @@ module Registers(clk,rst,Enable_Register_Write,Source_Read_1,
   input [4:0] Source_Read_1, Source_Read_2, Destination_Write;
   input [31:0] Write_Value;
   output [31:0] Read_Value_1, Read_Value_2;
-
+  
+  //Testiranje
+  wire [31:0] a,b,c;
+  assign a=Internal_Registers[0];
+  assign b=Internal_Registers[1];
+  assign c=Internal_Registers[9];
+  
   reg [31:0] Internal_Registers [31:0];
   integer i;
-
+  initial begin
+	 for (i = 0; i < 32; i = i + 1)
+        Internal_Registers[i] <= 0;
+  end
   always @ (negedge clk) begin
     if (rst) begin
       for (i = 0; i < 32; i = i + 1)

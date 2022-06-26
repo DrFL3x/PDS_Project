@@ -49,6 +49,8 @@ module Data_Memory(clk, rst, writeEn, readEn, address, dataIn, dataOut, dataUart
   
   initial begin
 		counter=0;
+		for (i = 0; i < 1024; i = i + 1)
+        dataMem[i] <= 0;
   end
   
   always@(posedge dataOver) begin
@@ -56,7 +58,7 @@ module Data_Memory(clk, rst, writeEn, readEn, address, dataIn, dataOut, dataUart
   end
   
   always@(*)
-		UART_Trans_Input=dataMem[counter];
+     UART_Trans_Input = dataMem[counter];
 		
   always @ (posedge clk) begin
   if (rst)
